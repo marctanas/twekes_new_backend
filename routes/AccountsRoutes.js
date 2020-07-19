@@ -64,22 +64,22 @@ router.post(
             }
 
             if(userData.password !== ""){
-                bcrypt.genSalt(
-                    (err, salt) => {
+                // bcrypt.genSalt(
+                //     (err, salt) => {
         
-                        // Step 2) Generate a hash encrypted password
-                        bcrypt.hash(
-                            userData.password,  
-                            salt,
-                            async(err, hashedPassword) => {
+                //         // Step 2) Generate a hash encrypted password
+                //         bcrypt.hash(
+                //             userData.password,  
+                //             salt,
+                //             async(err, hashedPassword) => {
                                 
-                                // Step 3) Replace the original password with hash encrypted password
-                                user.password = hashedPassword;
-                                await user.save();
-                            }
-                        )
-                    }
-                );
+                //                 // Step 3) Replace the original password with hash encrypted password
+                //                 user.password = hashedPassword;
+                //                 await user.save();
+                //             }
+                //         )
+                //     }
+                // );
             }
             user.save()
             res.json({message: 'User data has been updated'})

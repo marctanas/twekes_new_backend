@@ -28,11 +28,11 @@ router.post(
 
                 // if something goes wrong, send error
                 if(err){
-                    res.send(err)
+                    res.json(err)
                 }
                 // Otherwise, send success message
                 else{
-                    res.send('Your POST Merchants has been received.');
+                    res.json({message: 'Merchant has been saved'});
                 }
             }
         );
