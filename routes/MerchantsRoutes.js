@@ -63,7 +63,6 @@ router.get(
     }
 );
 
-
 // POST route to update product
 router.post(
     '/update',

@@ -40,7 +40,7 @@ router.get(
 );
 
 
-// POST route to update product
+// POST route to update user
 router.post(
     '/update',
     (req, res) => {
@@ -50,8 +50,6 @@ router.post(
             password: req.body.password,
             _id: req.user._id
         };
-
-        //console.log(req.body._id);
         
         AccountsModel.findOne(
             { _id: userData._id }
